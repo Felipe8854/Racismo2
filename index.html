@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Consciência Negra - Galeria de Fotos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #f39c12;
+      margin-bottom: 5px;
+    }
+    #intro-text {
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ddd;
+    }
+    #main-photo {
+      width: 60%;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #f39c12;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    #photo-description {
+      max-width: 700px;
+      margin: 10px auto 30px auto;
+      font-size: 1rem;
+      font-style: italic;
+      color: #f0c674;
+      min-height: 60px;
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+    .thumb {
+      width: 100px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 6px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    .thumb:hover {
+      border-color: #f39c12;
+    }
+    .thumb.active {
+      border-color: #f39c12;
+      box-shadow: 0 0 10px #f39c12;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Consciência Negra - Galeria de Fotos</h1>
+  <p id="intro-text">
+    A Consciência Negra é uma data importante que celebra a cultura, a história e a resistência do povo negro no Brasil e no mundo. É momento de refletir sobre igualdade, respeito e o valor da diversidade.
+  </p>
+  
+  <img id="main-photo" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Imagem principal" />
+  
+  <p id="photo-description">
+    Foto 1: A força e a beleza da representatividade negra na cultura contemporânea.
+  </p>
+
+  <div class="gallery">
+    <img class="thumb active" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80" alt="Foto 1" 
+      onclick="changePhoto(this, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80', 'Foto 1: A força e a beleza da representatividade negra na cultura contemporânea.')" />
+    
+    <img class="thumb" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80" alt="Foto 2" 
+      onclick="changePhoto(this, 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80', 'Foto 2: A importância da ancestralidade e do legado africano na construção da identidade brasileira.')" />
+    
+    <img class="thumb" src="https://images.unsplash.com/photo-1533777324565-a04df0e527b7?auto=format&fit=crop&w=200&q=80" alt="Foto 3" 
+      onclick="changePhoto(this, 'https://images.unsplash.com/photo-1533777324565-a04df0e527b7?auto=format&fit=crop&w=800&q=80', 'Foto 3: A luta por direitos e igualdade é fundamental para a transformação social.')" />
+    
+    <img class="thumb" src="https://images.unsplash.com/photo-1542728926-91c1bdb34ff8?auto=format&fit=crop&w=200&q=80" alt="Foto 4" 
+      onclick="changePhoto(this, 'https://images.unsplash.com/photo-1542728926-91c1bdb34ff8?auto=format&fit=crop&w=800&q=80', 'Foto 4: A celebração da cultura negra através da arte, música e dança.')" />
+    
+    <img class="thumb" src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?auto=format&fit=crop&w=200&q=80" alt="Foto 5" 
+      onclick="changePhoto(this, 'https://images.unsplash.com/photo-1535914254981-b5012eebbd15?auto=format&fit=crop&w=800&q=80', 'Foto 5: O orgulho da identidade negra e o poder da representatividade.')"/>
+  </div>
+
+  <footer>
+    Imagens de pessoas negras celebrando cultura, força e beleza. #ConsciênciaNegra
+  </footer>
+
+  <script>
+    function changePhoto(element, newSrc, description) {
+      // Troca a imagem principal
+      const mainPhoto = document.getElementById('main-photo');
+      mainPhoto.src = newSrc;
+
+      // Atualiza o texto da descrição
+      const photoDescription = document.getElementById('photo-description');
+      photoDescription.textContent = description;
+
+      // Remove classe active dos outros thumbs
+      document.querySelectorAll('.thumb').forEach(thumb => {
+        thumb.classList.remove('active');
+      });
+
+      // Adiciona a classe active ao clicado
+      element.classList.add('active');
+    }
+  </script>
+</body>
+</html>
 
