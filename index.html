@@ -1,9 +1,9 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Consciência Negra - Galeria de Fotos</title>
+  <title>Consciência Negra - Galeria e Informações</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -72,13 +72,52 @@
       box-shadow: 0 0 10px #f39c12;
     }
 
+    #mais-info-btn, #voltar-btn {
+      background-color: #f39c12;
+      color: #1a1a1a;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    #mais-info-btn:hover, #voltar-btn:hover {
+      background-color: #e67e22;
+    }
+
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
       color: #bbb;
     }
 
-    /* Responsividade */
+    .hidden {
+      display: none;
+    }
+
+    .info-section {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .info-section h2 {
+      color: #f39c12;
+      margin-top: 30px;
+    }
+
+    .info-section p, .info-section ul {
+      color: #ddd;
+      margin: 10px 0 20px;
+    }
+
+    .info-section ul {
+      padding-left: 20px;
+    }
+
     @media (max-width: 600px) {
       #main-photo {
         width: 100%;
@@ -91,54 +130,91 @@
   </style>
 </head>
 <body>
-  <h1>Consciência Negra - Galeria de Fotos</h1>
-  <p id="intro-text">
-    A Consciência Negra é uma data importante que celebra a cultura, a história e a resistência do povo negro no Brasil e no mundo. É momento de refletir sobre igualdade, respeito e o valor da diversidade.
-  </p>
-  
-  <!-- Imagem principal -->
-  <img id="main-photo" src="imagem/AtriconIRBTesouro-15.jpg" alt="Imagem principal" />
-  
-  <p id="photo-description">
-    Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.
-  </p>
 
-  <div class="gallery">
-    <img class="thumb active" src="imagem/Black_Conscience_Day_by_Latuff2.jpg" alt="imagem principal" 
-      onclick="changePhoto(this, 'imagem/Black_Conscience_Day_by_Latuff2.jpg', 'Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.')" />
-    
-    <img class="thumb" src="imagem/capa-racismo.png" alt="imagem principal" 
-       onclick="changePhoto(this, 'imagem/capa-racismo.png', 'Foto 2: O punho cerrado representa força, resistência e unidade na luta contra o racismo.')" />
-    
-    <img class="thumb" src="imagem/dia_consciencia_negra.png" alt="imagem principal" 
-      onclick="changePhoto(this, 'imagem/dia_consciencia_negra.png', 'Foto 3: Romper as correntes da escravidão simboliza a liberdade e a justiça.')" />
-    
-    <img class="thumb" src="imagem/images.jpeg" alt="imagem principal" 
-      onclick="changePhoto(this, 'imagem/images.jpeg', 'Foto 4: O racismo fere e exclui – é preciso combatê-lo para garantir igualdade e respeito.')" />
+  <!-- Galeria (Seção 1) -->
+  <div id="galeria-section">
+    <h1>Consciência Negra - Galeria de Fotos</h1>
+    <p id="intro-text">
+      A Consciência Negra é uma data importante que celebra a cultura, a história e a resistência do povo negro no Brasil e no mundo. É momento de refletir sobre igualdade, respeito e o valor da diversidade.
+    </p>
+
+    <img id="main-photo" src="imagem/Black_Conscience_Day_by_Latuff2.jpg" alt="Imagem principal" />
+
+    <p id="photo-description">
+      Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.
+    </p>
+
+    <div class="gallery">
+      <img class="thumb active" src="imagem/Black_Conscience_Day_by_Latuff2.jpg" alt="Dia da Consciência Negra"
+        onclick="changePhoto(this, 'imagem/Black_Conscience_Day_by_Latuff2.jpg', 'Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.')" />
+
+      <img class="thumb" src="imagem/capa-racismo.png" alt="Punho cerrado simbolizando resistência"
+        onclick="changePhoto(this, 'imagem/capa-racismo.png', 'Foto 2: O punho cerrado representa força, resistência e unidade na luta contra o racismo.')" />
+
+      <img class="thumb" src="imagem/dia_consciencia_negra.png" alt="Correntes rompidas simbolizando liberdade"
+        onclick="changePhoto(this, 'imagem/dia_consciencia_negra.png', 'Foto 3: Romper as correntes da escravidão simboliza a liberdade e a justiça.')" />
+
+      <img class="thumb" src="imagem/images.jpeg" alt="Imagem contra o racismo"
+        onclick="changePhoto(this, 'imagem/images.jpeg', 'Foto 4: O racismo fere e exclui – é preciso combatê-lo para garantir igualdade e respeito.')" />
+    </div>
+
+    <button id="mais-info-btn">➡️ Saiba mais sobre a luta contra o racismo</button>
+
+    <footer>
+      Imagens que representam luta, resistência, memória e o combate ao racismo. #ConsciênciaNegra
+    </footer>
   </div>
 
-  <footer>
-    Imagens que representam luta, resistência, memória e o combate ao racismo. #ConsciênciaNegra
-  </footer>
+  <!-- Informações (Seção 2) -->
+  <div id="info-section" class="hidden">
+    <h1>Mais Sobre a Luta Contra o Racismo</h1>
 
+    <div class="info-section">
+      <p>A luta contra o racismo é constante e exige a conscientização de toda a sociedade. Entender o problema é o primeiro passo para combatê-lo.</p>
+
+      <h2>O que é racismo?</h2>
+      <p>Racismo é qualquer forma de discriminação, exclusão ou violência baseada na cor da pele, origem étnica ou racial. Ele pode se manifestar de forma direta (como insultos) ou estrutural (como desigualdades no acesso à educação, saúde e trabalho).</p>
+
+      <h2>Como prevenir?</h2>
+      <ul>
+        <li>Eduque-se e eduque os outros sobre a história e cultura afro-brasileira.</li>
+        <li>Denuncie casos de racismo.</li>
+        <li>Promova o respeito e a igualdade nas suas redes e comunidades.</li>
+        <li>Apoie negócios, artistas e movimentos negros.</li>
+      </ul>
+
+      <h2>Protestos e movimentos</h2>
+      <p>Manifestações como o 20 de Novembro (Dia da Consciência Negra), Marcha das Mulheres Negras e outras são fundamentais para dar visibilidade às lutas e conquistas do povo negro.</p>
+    </div>
+
+    <button id="voltar-btn">⬅️ Voltar para a Galeria</button>
+  </div>
+
+  <!-- Script -->
   <script>
     function changePhoto(element, newSrc, description) {
-      // Troca a imagem principal
       const mainPhoto = document.getElementById('main-photo');
       mainPhoto.src = newSrc;
 
-      // Atualiza o texto da descrição
       const photoDescription = document.getElementById('photo-description');
       photoDescription.textContent = description;
 
-      // Remove classe active dos outros thumbs
       document.querySelectorAll('.thumb').forEach(thumb => {
         thumb.classList.remove('active');
       });
 
-      // Adiciona a classe active ao clicado
       element.classList.add('active');
     }
+
+    document.getElementById('mais-info-btn').addEventListener('click', function () {
+      document.getElementById('galeria-section').classList.add('hidden');
+      document.getElementById('info-section').classList.remove('hidden');
+    });
+
+    document.getElementById('voltar-btn').addEventListener('click', function () {
+      document.getElementById('info-section').classList.add('hidden');
+      document.getElementById('galeria-section').classList.remove('hidden');
+    });
   </script>
 </body>
-</html
+</html>
