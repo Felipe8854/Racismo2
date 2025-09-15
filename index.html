@@ -118,6 +118,13 @@
       padding-left: 20px;
     }
 
+    .info-section img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 600px) {
       #main-photo {
         width: 100%;
@@ -171,12 +178,15 @@
     <h1>Mais Sobre a Luta Contra o Racismo</h1>
 
     <div class="info-section">
+      <img src="imagem/racismo.jpg" alt="Imagem de protesto contra o racismo" />
       <p>A luta contra o racismo é constante e exige a conscientização de toda a sociedade. Entender o problema é o primeiro passo para combatê-lo.</p>
 
       <h2>O que é racismo?</h2>
+      <img src="imagem/o-que-e-racismo.jpg" alt="Imagem ilustrativa sobre o racismo" />
       <p>Racismo é qualquer forma de discriminação, exclusão ou violência baseada na cor da pele, origem étnica ou racial. Ele pode se manifestar de forma direta (como insultos) ou estrutural (como desigualdades no acesso à educação, saúde e trabalho).</p>
 
       <h2>Como prevenir?</h2>
+      <img src="imagem/como-prevenir-racismo.jpg" alt="Imagem ilustrativa sobre a prevenção do racismo" />
       <ul>
         <li>Eduque-se e eduque os outros sobre a história e cultura afro-brasileira.</li>
         <li>Denuncie casos de racismo.</li>
@@ -185,6 +195,7 @@
       </ul>
 
       <h2>Protestos e movimentos</h2>
+      <img src="imagem/protestos.jpg" alt="Imagem de protesto contra racismo" />
       <p>Manifestações como o 20 de Novembro (Dia da Consciência Negra), Marcha das Mulheres Negras e outras são fundamentais para dar visibilidade às lutas e conquistas do povo negro.</p>
     </div>
 
@@ -196,55 +207,57 @@
     <h1>Reflexões sobre a Cultura Afro-brasileira</h1>
 
     <div class="info-section">
+      <img src="imagem/cultura-afro.jpg" alt="Imagem de cultura afro-brasileira" />
       <p>A cultura afro-brasileira é um dos pilares mais importantes da sociedade brasileira, com suas influências no samba, na capoeira, na culinária e em diversas outras manifestações culturais.</p>
 
       <h2>A Influência do Samba</h2>
-      <p>O samba, um dos ritmos mais reconhecidos mundialmente, tem suas raízes profundas na cultura africana trazida pelos negros ao Brasil. É uma forma de resistência e celebração da identidade negra.</p>
+      <img src="imagem/samba.jpg" alt="Imagem de samba" />
+      <p>O samba, um dos ritmos mais reconhecidos mundialmente, tem suas raízes profundas na cultura africana trazida pelos negros ao Brasil. É uma forma de resistência e celebração.</p>
 
-      <h2>A Capoeira como Símbolo de Luta</h2>
-      <p>A capoeira mistura dança, luta e música, sendo uma das manifestações culturais mais representativas da resistência negra no Brasil. Ela é um símbolo de adaptação e resistência frente à opressão.</p>
-
-      <h2>Ritmos e Culinária</h2>
-      <p>A gastronomia afro-brasileira também possui grande importância, com pratos como feijoada, acarajé e moqueca, que têm influências africanas e são celebrados em diversas partes do Brasil.</p>
+      <h2>A Capoeira</h2>
+      <img src="imagem/capoeira.jpg" alt="Imagem de capoeira" />
+      <p>A capoeira é uma arte marcial criada por africanos no Brasil, que mistura luta, dança e música. É um símbolo de resistência e liberdade.</p>
     </div>
 
-    <button id="voltar-btn-3">⬅️ Voltar para a Galeria</button>
+    <button id="voltar-btn-3">⬅️ Voltar para a Luta Contra o Racismo</button>
   </div>
 
   <script>
-    function changePhoto(element, newSrc, description) {
-      const mainPhoto = document.getElementById('main-photo');
-      mainPhoto.src = newSrc;
+    function changePhoto(thumbnail, imageUrl, description) {
+      document.getElementById("main-photo").src = imageUrl;
+      document.getElementById("photo-description").textContent = description;
 
-      const photoDescription = document.getElementById('photo-description');
-      photoDescription.textContent = description;
+      // Remove a classe 'active' de todas as miniaturas
+      const thumbs = document.querySelectorAll('.thumb');
+      thumbs.forEach(thumb => thumb.classList.remove('active'));
 
-      document.querySelectorAll('.thumb').forEach(thumb => {
-        thumb.classList.remove('active');
-      });
-
-      element.classList.add('active');
+      // Adiciona a classe 'active' na miniatura clicada
+      thumbnail.classList.add('active');
     }
 
-    document.getElementById('mais-info-btn').addEventListener('click', function () {
-      document.getElementById('galeria-section').classList.add('hidden');
-      document.getElementById('info-section').classList.remove('hidden');
-    });
+    // Exibindo a seção de informações sobre o racismo
+    document.getElementById("mais-info-btn").onclick = function() {
+      document.getElementById("galeria-section").classList.add('hidden');
+      document.getElementById("info-section").classList.remove('hidden');
+    };
 
-    document.getElementById('voltar-btn').addEventListener('click', function () {
-      document.getElementById('info-section').classList.add('hidden');
-      document.getElementById('galeria-section').classList.remove('hidden');
-    });
+    // Exibindo a seção de informações sobre a cultura afro-brasileira
+    document.getElementById("mais-info-btn-3").onclick = function() {
+      document.getElementById("galeria-section").classList.add('hidden');
+      document.getElementById("info-section-3").classList.remove('hidden');
+    };
 
-    document.getElementById('mais-info-btn-3').addEventListener('click', function () {
-      document.getElementById('galeria-section').classList.add('hidden');
-      document.getElementById('info-section-3').classList.remove('hidden');
-    });
+    // Voltar para a galeria
+    document.getElementById("voltar-btn").onclick = function() {
+      document.getElementById("info-section").classList.add('hidden');
+      document.getElementById("galeria-section").classList.remove('hidden');
+    };
 
-    document.getElementById('voltar-btn-3').addEventListener('click', function () {
-      document.getElementById('info-section-3').classList.add('hidden');
-      document.getElementById('galeria-section').classList.remove('hidden');
-    });
+    document.getElementById("voltar-btn-3").onclick = function() {
+      document.getElementById("info-section-3").classList.add('hidden');
+      document.getElementById("info-section").classList.remove('hidden');
+    };
   </script>
+
 </body>
 </html>
