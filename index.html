@@ -219,7 +219,7 @@
       <p>A capoeira é uma arte marcial criada por africanos no Brasil, que mistura luta, dança e música. É um símbolo de resistência e liberdade.</p>
     </div>
 
-    <button id="voltar-btn-3">⬅️ Voltar para a Luta Contra o Racismo</button>
+    <button id="voltar-btn-3">⬅️ Voltar para a Galeria</button>
   </div>
 
   <script>
@@ -253,9 +253,10 @@
       document.getElementById("galeria-section").classList.remove('hidden');
     };
 
+    // Voltar para a primeira seção (Galeria) ao clicar no botão da terceira seção
     document.getElementById("voltar-btn-3").onclick = function() {
       document.getElementById("info-section-3").classList.add('hidden');
-      document.getElementById("info-section").classList.remove('hidden');
+      document.getElementById("galeria-section").classList.remove('hidden'); // Volta para a galeria (primeira seção)
     };
   </script>
 
