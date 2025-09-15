@@ -72,7 +72,7 @@
       box-shadow: 0 0 10px #f39c12;
     }
 
-    #mais-info-btn, #voltar-btn {
+    #mais-info-btn, #voltar-btn, #proxima-pagina-btn {
       background-color: #f39c12;
       color: #1a1a1a;
       border: none;
@@ -84,7 +84,7 @@
       margin-top: 30px;
     }
 
-    #mais-info-btn:hover, #voltar-btn:hover {
+    #mais-info-btn:hover, #voltar-btn:hover, #proxima-pagina-btn:hover {
       background-color: #e67e22;
     }
 
@@ -116,6 +116,28 @@
 
     .info-section ul {
       padding-left: 20px;
+    }
+
+    #third-section {
+      display: none; /* Inicialmente oculta */
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    #third-section img {
+      width: 80%;
+      max-width: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #f39c12;
+      margin-bottom: 20px;
+    }
+
+    #third-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ddd;
     }
 
     @media (max-width: 600px) {
@@ -188,9 +210,23 @@
     </div>
 
     <button id="voltar-btn">⬅️ Voltar para a Galeria</button>
+    <button id="proxima-pagina-btn">➡️ Aprofunde-se mais sobre a luta</button>
   </div>
 
-  <!-- Script -->
+  <!-- Página 3 (Nova Seção) -->
+  <div id="third-section" class="hidden">
+    <h1>Reflexão Sobre o Dia da Consciência Negra</h1>
+    <img src="imagem/consciencia_negra.jpg" alt="Reflexão sobre Consciência Negra">
+    <p>
+      O Dia da Consciência Negra é uma oportunidade para refletir sobre as conquistas e desafios enfrentados pelo povo negro ao longo da história. É um momento para reconhecer a luta por direitos iguais e pela valorização da cultura afro-brasileira.
+    </p>
+    <p>
+      O combate ao racismo e a discriminação racial exige não apenas ações de conscientização, mas também mudanças estruturais em nossa sociedade.
+    </p>
+
+    <button id="previous-btn">⬅️ Voltar para a página anterior</button>
+  </div>
+
   <script>
     function changePhoto(element, newSrc, description) {
       const mainPhoto = document.getElementById('main-photo');
@@ -214,6 +250,16 @@
     document.getElementById('voltar-btn').addEventListener('click', function () {
       document.getElementById('info-section').classList.add('hidden');
       document.getElementById('galeria-section').classList.remove('hidden');
+    });
+
+    document.getElementById('proxima-pagina-btn').addEventListener('click', function () {
+      document.getElementById('info-section').classList.add('hidden');
+      document.getElementById('third-section').classList.remove('hidden');
+    });
+
+    document.getElementById('previous-btn').addEventListener('click', function () {
+      document.getElementById('third-section').classList.add('hidden');
+      document.getElementById('info-section').classList.remove('hidden');
     });
   </script>
 </body>
