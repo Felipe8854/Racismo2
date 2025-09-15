@@ -72,7 +72,7 @@
       box-shadow: 0 0 10px #f39c12;
     }
 
-    #mais-info-btn, #voltar-btn, #proxima-pagina-btn {
+    #mais-info-btn, #voltar-btn, #mais-info-btn-3 {
       background-color: #f39c12;
       color: #1a1a1a;
       border: none;
@@ -84,7 +84,7 @@
       margin-top: 30px;
     }
 
-    #mais-info-btn:hover, #voltar-btn:hover, #proxima-pagina-btn:hover {
+    #mais-info-btn:hover, #voltar-btn:hover, #mais-info-btn-3:hover {
       background-color: #e67e22;
     }
 
@@ -116,28 +116,6 @@
 
     .info-section ul {
       padding-left: 20px;
-    }
-
-    #third-section {
-      display: none; /* Inicialmente oculta */
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    #third-section img {
-      width: 80%;
-      max-width: 700px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #f39c12;
-      margin-bottom: 20px;
-    }
-
-    #third-section p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #ddd;
     }
 
     @media (max-width: 600px) {
@@ -181,6 +159,7 @@
     </div>
 
     <button id="mais-info-btn">➡️ Saiba mais sobre a luta contra o racismo</button>
+    <button id="mais-info-btn-3">➡️ Descubra mais sobre a cultura afro-brasileira</button>
 
     <footer>
       Imagens que representam luta, resistência, memória e o combate ao racismo. #ConsciênciaNegra
@@ -210,21 +189,26 @@
     </div>
 
     <button id="voltar-btn">⬅️ Voltar para a Galeria</button>
-    <button id="proxima-pagina-btn">➡️ Aprofunde-se mais sobre a luta</button>
   </div>
 
-  <!-- Página 3 (Nova Seção) -->
-  <div id="third-section" class="hidden">
-    <h1>Reflexão Sobre o Dia da Consciência Negra</h1>
-    <img src="imagem/consciencia_negra.jpg" alt="Reflexão sobre Consciência Negra">
-    <p>
-      O Dia da Consciência Negra é uma oportunidade para refletir sobre as conquistas e desafios enfrentados pelo povo negro ao longo da história. É um momento para reconhecer a luta por direitos iguais e pela valorização da cultura afro-brasileira.
-    </p>
-    <p>
-      O combate ao racismo e a discriminação racial exige não apenas ações de conscientização, mas também mudanças estruturais em nossa sociedade.
-    </p>
+  <!-- Terceira Seção (Seção 3) -->
+  <div id="info-section-3" class="hidden">
+    <h1>Reflexões sobre a Cultura Afro-brasileira</h1>
 
-    <button id="previous-btn">⬅️ Voltar para a página anterior</button>
+    <div class="info-section">
+      <p>A cultura afro-brasileira é um dos pilares mais importantes da sociedade brasileira, com suas influências no samba, na capoeira, na culinária e em diversas outras manifestações culturais.</p>
+
+      <h2>A Influência do Samba</h2>
+      <p>O samba, um dos ritmos mais reconhecidos mundialmente, tem suas raízes profundas na cultura africana trazida pelos negros ao Brasil. É uma forma de resistência e celebração da identidade negra.</p>
+
+      <h2>A Capoeira como Símbolo de Luta</h2>
+      <p>A capoeira mistura dança, luta e música, sendo uma das manifestações culturais mais representativas da resistência negra no Brasil. Ela é um símbolo de adaptação e resistência frente à opressão.</p>
+
+      <h2>Ritmos e Culinária</h2>
+      <p>A gastronomia afro-brasileira também possui grande importância, com pratos como feijoada, acarajé e moqueca, que têm influências africanas e são celebrados em diversas partes do Brasil.</p>
+    </div>
+
+    <button id="voltar-btn-3">⬅️ Voltar para a Galeria</button>
   </div>
 
   <script>
@@ -252,14 +236,14 @@
       document.getElementById('galeria-section').classList.remove('hidden');
     });
 
-    document.getElementById('proxima-pagina-btn').addEventListener('click', function () {
-      document.getElementById('info-section').classList.add('hidden');
-      document.getElementById('third-section').classList.remove('hidden');
+    document.getElementById('mais-info-btn-3').addEventListener('click', function () {
+      document.getElementById('galeria-section').classList.add('hidden');
+      document.getElementById('info-section-3').classList.remove('hidden');
     });
 
-    document.getElementById('previous-btn').addEventListener('click', function () {
-      document.getElementById('third-section').classList.add('hidden');
-      document.getElementById('info-section').classList.remove('hidden');
+    document.getElementById('voltar-btn-3').addEventListener('click', function () {
+      document.getElementById('info-section-3').classList.add('hidden');
+      document.getElementById('galeria-section').classList.remove('hidden');
     });
   </script>
 </body>
