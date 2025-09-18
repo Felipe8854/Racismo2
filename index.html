@@ -11,6 +11,40 @@
       color: #f1f1f1;
       text-align: center;
       padding: 20px;
+      margin: 0;
+    }
+
+    nav {
+      background-color: #f39c12;
+      padding: 10px 0;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: bold;
+      color: #1a1a1a;
+      padding: 8px 15px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    nav ul li:hover, nav ul li.active {
+      background-color: #e67e22;
+      color: #fff;
     }
 
     h1 {
@@ -72,22 +106,6 @@
       box-shadow: 0 0 10px #f39c12;
     }
 
-    #mais-info-btn, #voltar-btn, #mais-info-btn-3 {
-      background-color: #f39c12;
-      color: #1a1a1a;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-top: 30px;
-    }
-
-    #mais-info-btn:hover, #voltar-btn:hover, #mais-info-btn-3:hover {
-      background-color: #e67e22;
-    }
-
     footer {
       margin-top: 40px;
       font-size: 0.9rem;
@@ -125,6 +143,15 @@
       margin-bottom: 20px;
     }
 
+    #complemento-galeria {
+      max-width: 700px;
+      margin: 20px auto;
+      color: #ddd;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
     @media (max-width: 600px) {
       #main-photo {
         width: 100%;
@@ -133,48 +160,62 @@
         width: 80px;
         height: 55px;
       }
+      nav ul li {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li class="active" data-section="galeria-section">Galeria</li>
+      <li data-section="info-section">Luta contra o Racismo</li>
+      <li data-section="info-section-3">Cultura Afro-brasileira</li>
+      <li data-section="info-section-4">Importância da Consciência Negra</li>
+    </ul>
+  </nav>
+
   <!-- Galeria (Seção 1) -->
-  <div id="galeria-section">
+  <section id="galeria-section">
     <h1>Consciência Negra - Galeria de Fotos</h1>
     <p id="intro-text">
       A Consciência Negra é uma data importante que celebra a cultura, a história e a resistência do povo negro no Brasil e no mundo. É momento de refletir sobre igualdade, respeito e o valor da diversidade.
     </p>
 
     <img id="main-photo" src="imagem/Black_Conscience_Day_by_Latuff2.jpg" alt="Imagem principal" />
-
     <p id="photo-description">
       Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.
     </p>
 
     <div class="gallery">
-      <img class="thumb active" src="imagem/Black_Conscience_Day_by_Latuff2.jpg" alt="Dia da Consciência Negra"
+      <img class="thumb active" src="imagem/Black_Conscience_Day_by_Latuff2.jpg"
+        alt="Dia da Consciência Negra"
         onclick="changePhoto(this, 'imagem/Black_Conscience_Day_by_Latuff2.jpg', 'Foto 1: Dia da Consciência Negra – um marco de luta, memória e valorização da cultura afro-brasileira.')" />
-
-      <img class="thumb" src="imagem/capa-racismo.png" alt="Punho cerrado simbolizando resistência"
+      <img class="thumb" src="imagem/capa-racismo.png"
+        alt="Punho cerrado simbolizando resistência"
         onclick="changePhoto(this, 'imagem/capa-racismo.png', 'Foto 2: O punho cerrado representa força, resistência e unidade na luta contra o racismo.')" />
-
-      <img class="thumb" src="imagem/dia_consciencia_negra.png" alt="Correntes rompidas simbolizando liberdade"
+      <img class="thumb" src="imagem/dia_consciencia_negra.png"
+        alt="Correntes rompidas simbolizando liberdade"
         onclick="changePhoto(this, 'imagem/dia_consciencia_negra.png', 'Foto 3: Romper as correntes da escravidão simboliza a liberdade e a justiça.')" />
-
-      <img class="thumb" src="imagem/images.jpeg" alt="Imagem contra o racismo"
+      <img class="thumb" src="imagem/images.jpeg"
+        alt="Imagem contra o racismo"
         onclick="changePhoto(this, 'imagem/images.jpeg', 'Foto 4: O racismo fere e exclui – é preciso combatê-lo para garantir igualdade e respeito.')" />
     </div>
 
-    <button id="mais-info-btn">➡️ Saiba mais sobre a luta contra o racismo</button>
-    <button id="mais-info-btn-3">➡️ Descubra mais sobre a cultura afro-brasileira</button>
+    <div id="complemento-galeria">
+      A galeria acima mostra imagens que representam a força, a resistência e a luta pela igualdade da população negra no Brasil. Cada foto traz um símbolo importante para a reflexão e a valorização da cultura afro-brasileira.
+    </div>
 
     <footer>
       Imagens que representam luta, resistência, memória e o combate ao racismo. #ConsciênciaNegra
     </footer>
-  </div>
+  </section>
 
   <!-- Informações (Seção 2) -->
-  <div id="info-section" class="hidden">
+  <section id="info-section" class="hidden">
     <h1>Mais Sobre a Luta Contra o Racismo</h1>
 
     <div class="info-section">
@@ -198,12 +239,10 @@
       <img src="imagem/images.jpeg" alt="Imagem de protesto contra racismo" />
       <p>Manifestações como o 20 de Novembro (Dia da Consciência Negra), Marcha das Mulheres Negras e outras são fundamentais para dar visibilidade às lutas e conquistas do povo negro.</p>
     </div>
-
-    <button id="voltar-btn">⬅️ Voltar para a Galeria</button>
-  </div>
+  </section>
 
   <!-- Terceira Seção (Seção 3) -->
-  <div id="info-section-3" class="hidden">
+  <section id="info-section-3" class="hidden">
     <h1>Reflexões sobre a Cultura Afro-brasileira</h1>
 
     <div class="info-section">
@@ -218,46 +257,63 @@
       <img src="imagem/ilustra-o-de-capoeira-desenhada_52683-136858.jpg" alt="Imagem de capoeira" />
       <p>A capoeira é uma arte marcial criada por africanos no Brasil, que mistura luta, dança e música. É um símbolo de resistência e liberdade.</p>
     </div>
+  </section>
 
-    <button id="voltar-btn-3">⬅️ Voltar para a Galeria</button>
-  </div>
+  <!-- Quarta Seção (Seção 4) -->
+  <section id="info-section-4" class="hidden">
+    <h1>Importância da Consciência Negra</h1>
+
+    <div class="info-section">
+      <img src="imagem/consciência-negra-cultura.jpg" alt="Imagem representando Consciência Negra" />
+      <p>A Consciência Negra é fundamental para que a sociedade reconheça e valorize a contribuição dos negros para a construção da identidade cultural e social do Brasil.</p>
+
+      <h2>Reflexão e Educação</h2>
+      <img src="imagem/educacao-consciencia-negra.jpg" alt="Imagem sobre educação e consciência negra" />
+      <p>Promover a educação sobre a história e as culturas afro-brasileiras ajuda a combater o racismo e a construir uma sociedade mais justa e igualitária.</p>
+
+      <h2>Preservação da Cultura</h2>
+      <img src="imagem/preservacao-cultural.jpg" alt="Imagem sobre preservação cultural" />
+      <p>Preservar as tradições, a música, a dança e outras manifestações afro-brasileiras fortalece a identidade e o orgulho da população negra.</p>
+    </div>
+  </section>
 
   <script>
     function changePhoto(thumbnail, imageUrl, description) {
       document.getElementById("main-photo").src = imageUrl;
       document.getElementById("photo-description").textContent = description;
 
-      // Remove a classe 'active' de todas as miniaturas
       const thumbs = document.querySelectorAll('.thumb');
       thumbs.forEach(thumb => thumb.classList.remove('active'));
-
-      // Adiciona a classe 'active' na miniatura clicada
       thumbnail.classList.add('active');
     }
 
-    // Exibindo a seção de informações sobre o racismo
-    document.getElementById("mais-info-btn").onclick = function() {
-      document.getElementById("galeria-section").classList.add('hidden');
-      document.getElementById("info-section").classList.remove('hidden');
-    };
+    // Menu de navegação entre seções
+    const menuItems = document.querySelectorAll('nav ul li');
+    const sections = document.querySelectorAll('section');
 
-    // Exibindo a seção de informações sobre a cultura afro-brasileira
-    document.getElementById("mais-info-btn-3").onclick = function() {
-      document.getElementById("galeria-section").classList.add('hidden');
-      document.getElementById("info-section-3").classList.remove('hidden');
-    };
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active do menu
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
 
-    // Voltar para a galeria
-    document.getElementById("voltar-btn").onclick = function() {
-      document.getElementById("info-section").classList.add('hidden');
-      document.getElementById("galeria-section").classList.remove('hidden');
-    };
+        // Esconde todas as seções e mostra a selecionada
+        const sectionId = item.getAttribute('data-section');
+        sections.forEach(sec => {
+          if (sec.id === sectionId) {
+            sec.classList.remove('hidden');
+          } else {
+            sec.classList.add('hidden');
+          }
+        });
 
-    // Voltar para a primeira seção (Galeria) ao clicar no botão da terceira seção
-    document.getElementById("voltar-btn-3").onclick = function() {
-      document.getElementById("info-section-3").classList.add('hidden');
-      document.getElementById("galeria-section").classList.remove('hidden'); // Volta para a galeria (primeira seção)
-    };
+        // Se for a galeria, reseta a imagem principal para a primeira e ativa a thumb correta
+        if(sectionId === 'galeria-section'){
+          const firstThumb = document.querySelector('.gallery .thumb');
+          changePhoto(firstThumb, firstThumb.src, firstThumb.alt);
+        }
+      });
+    });
   </script>
 
 </body>
