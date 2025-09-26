@@ -4,11 +4,57 @@ body {
   color: #f1f1f1;
   text-align: center;
   padding: 20px;
+  margin: 0;
+}
+
+header {
+  background-color: #f39c12;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background-color: #f39c12;
+  border: none;
+  color: #1a1a1a;
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-width: 140px;
+}
+
+nav button:hover {
+  background-color: #e67e22;
+}
+
+nav button.active {
+  background-color: #d87f0a;
+  box-shadow: 0 0 8px #d87f0a;
+}
+
+section {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+}
+
+section.hidden {
+  display: none;
 }
 
 h1 {
   color: #f39c12;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 #intro-text {
@@ -20,11 +66,11 @@ h1 {
 }
 
 #main-photo {
-  width: 60%;
-  max-width: 600px;
+  width: 80%;
+  max-width: 700px;
   border-radius: 10px;
   box-shadow: 0 0 15px #f39c12;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   transition: all 0.3s ease;
 }
 
@@ -43,6 +89,7 @@ h1 {
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 15px;
+  margin-bottom: 25px;
 }
 
 .thumb {
@@ -52,11 +99,12 @@ h1 {
   border-radius: 6px;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .thumb:hover {
   border-color: #f39c12;
+  transform: scale(1.05);
 }
 
 .thumb.active {
@@ -64,10 +112,49 @@ h1 {
   box-shadow: 0 0 10px #f39c12;
 }
 
-footer {
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #bbb;
+.info-section {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  color: #ddd;
 }
 
+.info-section h2 {
+  color: #f39c12;
+  margin-top: 30px;
+}
 
+.info-section p, .info-section ul {
+  margin: 10px 0 20px;
+  line-height: 1.5;
+}
+
+.info-section ul {
+  padding-left: 20px;
+}
+
+.info-section img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 12px #f39c12;
+}
+
+@media (max-width: 600px) {
+  #main-photo {
+    width: 100%;
+  }
+  .thumb {
+    width: 80px;
+    height: 55px;
+  }
+  nav {
+    gap: 10px;
+  }
+  nav button {
+    min-width: 110px;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
